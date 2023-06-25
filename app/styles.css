@@ -1,28 +1,48 @@
 *, *::before, *::after {
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-weight: normal;
+    box-sizing: border-box; /* include border and padding in the width */
+    font-family:'Courier New', Courier, monospace; /* default font */
+    font-weight: normal; /* remove bold */
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(90deg, #7a9aa3 0%, #92FE9D 100%);
+    margin: 0; /* remove default margin */
+    padding: 0; /* remove default padding */
+    background: linear-gradient(90deg, #7a9aa3 0%, #92FE9D 100%); /* gradient background */
 }
 
-#calculatorAppbruh .calculator-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+.calculator-grid {
+    display: grid; /* grid layout */
+    justify-content: center; /* center horizontally */
+    align-content: center; /* center vertically */
+    min-height: 100vh; /* 100% of the viewport height */
+    grid-template-columns: repeat(4, 100px); /* 4 columns 100px each */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* 1st row 120px, rest 100px */
 }
 
-#calculatorApp .calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    background-color: rgba(255, 255, 255, .75);
+.calculator-grid > button {
+    cursor: pointer; /* pointer on hover */
+    font-size: 2rem; /* 2x font size */
+    border: 1px solid white; /* white border */
+    outline: none; /* remove the focus */
+    background-color: rgba(255, 255, 255, .75); /* 75% transparent white */
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9); /* 90% transparent white */
+}
+
+.span-two {
+    grid-column: span 2; /* shorthand for 1 to 3 line */
+}
+
+.output {
+    grid-column: 1 / -1; /* shorthand for 1 to end line */
+    background-color: rgba(0, 0, 0, .75); /* 75% transparent black */
+    display: flex; /* align items in a row (default) */
+    align-items: flex-end; /* align items at the bottom */
+    justify-content: space-around; /* space around items */
+    flex-direction: column; /* align items in a column */
+    padding: 10px; /* padding inside the output */
+    word-wrap: break-word; /* for long expressions */
+    word-break: break-all; /* for long expressions */
 }
