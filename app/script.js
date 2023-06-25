@@ -38,7 +38,10 @@ class Calculator {
         switch (this.operation) { // Switch statement
             case '+': // If operation property is +
                 computation = prev + current; // Set computation variable to prev variable plus
+        }
+    }
 }
+
 
 const numberButtons = document.querySelectorAll('[data-number]'); // Select all buttons with data-number attribute
 const operationButtons = document.querySelectorAll('[data-operation]'); // Select all buttons with data-operation attribute
@@ -49,3 +52,17 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 const currentOperandTextElement = document.querySelector('[data-current-operand]'); // Select element with data-current-operand attribute
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement); // Create new instance of Calculator class
+
+numberButtons.forEach(button => { // For each button in numberButtons array
+    button.addEventListener('click', () => { // Add event listener for click event
+        calculator.appendNumber(button.innerText); // Call appendNumber method with button inner text as parameter
+        calculator.updateDisplay(); // Call updateDisplay method
+    })
+})
+
+operationButtons.forEach(button => { // For each button in operationButtons array
+    button.addEventListener('click', () => { // Add event listener for click event
+        calculator.chooseOperation(button.innerText); // Call chooseOperation method with button inner text as parameter
+        calculator.updateDisplay(); // Call updateDisplay method
+    })
+})
