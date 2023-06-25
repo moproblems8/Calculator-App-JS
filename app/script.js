@@ -40,6 +40,11 @@ class Calculator {
                 computation = prev + current; // Set computation variable to prev variable plus
         }
     }
+
+    updateDisplay() { // Update display method
+        this.currentOperandTextElement.innerText = this.currentOperand; // Set currentOperandTextElement inner text to currentOperand property
+        this.previousOperandTextElement.innerText = this.previousOperand; // Set previousOperandTextElement inner text to previousOperand property
+    }
 }
 
 
