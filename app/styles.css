@@ -1,58 +1,60 @@
-*, *::before, *::after {
-    box-sizing: border-box; /* include border and padding in the width */
-    font-family:'Courier New', Courier, monospace; /* default font */
-    font-weight: normal; /* remove bold */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
 }
 
 body {
-    margin: 0; /* remove default margin */
-    padding: 0; /* remove default padding */
-    background: linear-gradient(90deg, #7a9aa3 0%, #92FE9D 100%); /* gradient background */
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
 }
 
 .calculator-grid {
-    display: grid; /* grid layout */
-    justify-content: center; /* center horizontally */
-    align-content: center; /* center vertically */
-    min-height: 100vh; /* 100% of the viewport height */
-    grid-template-columns: repeat(4, 100px); /* 4 columns 100px each */
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* 1st row 120px, rest 100px */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .calculator-grid > button {
-    cursor: pointer; /* pointer on hover */
-    font-size: 2rem; /* 2x font size */
-    border: 1px solid white; /* white border */
-    outline: none; /* remove the focus */
-    background-color: rgba(255, 255, 255, .75); /* 75% transparent white */
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .calculator-grid > button:hover {
-    background-color: rgba(255, 255, 255, .9); /* 90% transparent white */
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .span-two {
-    grid-column: span 2; /* shorthand for 1 to 3 line */
+  grid-column: span 2;
 }
 
 .output {
-    grid-column: 1 / -1; /* shorthand for 1 to end line */
-    background-color: rgba(0, 0, 0, .75); /* 75% transparent black */
-    display: flex; /* align items in a row (default) */
-    align-items: flex-end; /* align items at the bottom */
-    justify-content: space-around; /* space around items */
-    flex-direction: column; /* align items in a column */
-    padding: 10px; /* padding inside the output */
-    word-wrap: break-word; /* for long expressions */
-    word-break: break-all; /* for long expressions */
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .output .previous-operand {
-    color: rgba(255, 255, 255, .75); /* 75% transparent white */
-    font-size: 1.5rem; /* 1.5x font size */
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
 }
 
 .output .current-operand {
-    color: white; /* white */
-    font-size: 2.5rem; /* 2.5x font size */
+  color: white;
+  font-size: 2.5rem;
 }
